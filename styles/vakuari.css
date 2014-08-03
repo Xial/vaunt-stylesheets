@@ -1,0 +1,127 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain("www.furaffinity.net") {
+/*
+// Welcome on Vakuari, ponybells' attempt at writing a comprehensive overhaul theme
+// for the spaghetti dump that is called "FurAffinity".
+// Vakuari attempts to be a light colored theme, much like Vaunt Dark boasts being
+// a dark and eye soothing theme.
+// Good Luck.
+*/
+
+/* starting with things up top: menu lock goes here */
+
+    .block-menu-top {
+        position: fixed !important;
+        top: 0 !important;
+        z-index: 1024 !important;
+        border-bottom: 1px solid #b8b8a2 !important;
+        background-color: #e6e6ca !important;
+        box-shadow: 0px 2px 3px #b8b8a2 !important;
+    }
+    
+    td.header_bkg, td.header_bkg ul, td.header_bkg li {
+        background-color: #e6e6ca !important;
+        font: 10pt 'Aaargh', sans-serif !important;
+    }
+
+/* Let's shove the content down by an em or two. */
+
+    body > div { padding-top: 2.53em !important; }
+
+/* Let's do something with colors here. */
+
+    body, table, tbody, .cat a, .innertable td, div, th, h6, h5, h4, h3, h2, h1 {
+        background-color: #f0f0df !important;
+    }
+
+    .message-stream li:hover, li.checked {
+        background-color: #b8b8a2 !important;
+    }
+    hr {
+        color: #5C5C91 !important;
+    }
+    
+    #submission > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
+        border-left: 0 !important;
+        border-right: 0 !important;
+        border-bottom: 0 !important;
+        border-top: 2px solid #b8b8a2 !important;
+    }
+
+/* Comment Shaping goes here */
+    .container-comment > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(-n+3) {
+        border: 0 !important;
+        border-bottom: 1px solid #b8b8a2 !important;
+    }
+    
+    .container-comment, .container-comment > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(1) {
+        border: 0 !important;
+        color: #000 !important;
+    }
+    .container-comment > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2){
+        border: 0 !important;
+        color: #000 !important;
+    }
+   	.container-comment > tbody:nth-child(1) > tr:nth-child(2), .container-comment > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2) {
+        border-right: 1px solid #b8b8a2 !important;    	
+        color: #000 !important;
+   	}
+	.container-comment > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
+	   border-left: 1px solid #b8b8a2 !important;
+	   color: #000 !important;
+	}
+
+/* Replace the banner with a three bar mark indicating menu. */
+    #fa_header {
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAQAQMAAADtUYf0AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAABlJREFUeF5txrEJAAAAAiBP7/SgOVxExl8BTKAEgeYzGuIAAAAASUVORK5CYII=) repeat-x !important;
+        width: 16px !important;
+        height: 16px !important;
+        padding-left: 0 !important;
+        position: fixed !important;
+        top: 8px !important;
+        left: 10px !important;
+        z-index: 1280 !important;
+    }
+    
+    ul.dropdown {
+        padding-left: 2em !important;
+    }
+
+    /* This is for the occasional admin notice */
+    #admin_notice_do_not_adblock {
+        position: absolute !important;
+        left: 1em !important;
+        top: 3.8em !important;
+    }
+    #admin_notice_do_not_adblock td {
+        background-color: #8A8A79 !important;
+        font: 120% sans-serif !important;
+        color: #FAFAF4 !important;
+        font-weight: bold !important;
+    }
+    #admin_notice_do_not_adblock h4 {
+        background-color: #8A8A79 !important;
+        color: #FAFAF4 !important;
+        font-weight: bold !important;
+        padding-left: 4px !important;
+    }
+
+        /* Label: Clobber the 'deleted submissions' image and replace with our own. 
+        Requires two phases: Original image must be hidden. Erased images have a consistent URL of '/view//'.
+        Set a background-image on the anchor, not the image, and display none the image to get the image from
+        the anchor to appear.*/
+        img[src$="/images/submission-message-deleted.gif"] {
+            display: none !important;
+        } 
+        a[href="/view//"] {
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAgMAAAAOFJJnAAAACVBMVEUAAAD%2FyQ4ZGRmP4SayAAAAAXRSTlMAQObYZgAAAHdJREFUeF49kDEOAkAIBIfi%2FAGFv7knXAEm9PIfGxsf4DuVRHeKDQncsQvC9k%2FXAUY9gFEvgA5WbbA%2B2PsBl9eGCvAGrgl5B1ZuywN89VsDZHgy%2BPMWDKvrMFj1ZiATFWppWM%2FRh1qhpbKBjMmqzCuOAiqyjsCfD4lhIQNhkuByAAAAAElFTkSuQmCC) !important;
+            width: 64px !important;
+            height: 64px !important;
+            background-size: 64px 64px;
+            border: 0 !important;
+            box-shadow: 0 0 0 0 !important;            
+        }
+    
+
+}
