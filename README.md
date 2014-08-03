@@ -1,4 +1,4 @@
-/Vaunt Dark/ and /Vakuari/
+*Vaunt Dark* and *Vakuari*
 =================
 
 This repository contains a pair of custom stylesheets I've been working on for use with FurAffinity.
