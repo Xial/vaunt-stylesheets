@@ -7,14 +7,16 @@
     Currently, it is important to use the FurAffinity dark stylesheet in your Account settings to fix color mismatches.
     ponybells can only do so much with spaghetti. :)
     If you like ponybells' work, feel free to buy them a half a gallon of gas.
+    ponybells accepts dogecoin! - DRqTxQ28eEvNAiYryzypBcNJG9Ym4Up7R9
+    ponybells accepts litecoin! - LU68fBHWwU4bbxNzUnowV6ooFRBYxiecnw
+    ponybells accepts bitcoin!! - 133GutusMrnZrWToe4v88EJbyCjakQnt3N
     Cheers!
 */
 /* 
-    Version String: v14.07.26.01-FX-VTDK
-    Version Name: "Accelerant Nanites"
+    Version String: v14.11.19.01-FX-VTDK
+    Version Name: "S3-Stiletto"
     Mini-changelog:
-       h3 class header on browsing your own backlog is finally styled (hooray!)
-       Ratings checkmarks are now monospace, and color tuned to fit Vaunt Dark.
+       finally, the admin box and the occasional news update are properly positioned!
 */
 
 /* Header Scrolling Lock, mitigation of waste at the top. 
@@ -42,7 +44,7 @@
     }
     
     body > div { 
-        padding-top: 2em !important;
+        padding-top: 1.8em !important;
     }
     /* 
        This is where the header, with the a-tail logo resides.
@@ -61,14 +63,16 @@
     /* This is for the occasional admin notice. */
     #admin_notice_do_not_adblock {
         position: absolute !important;
-        left: 1em !important;
-        top: 3.8em !important;
+        left: 2.25em !important;
+        top: 5.1em !important;
+        border-left: 1em solid #f00 !important;
     }
     #admin_notice_do_not_adblock td {
-        background-color: #cacaca !important;
+        background-color: #282828 !important;
         font: 120% sans-serif !important;
-        color: #333 !important;
+        color: #face50 !important;
         font-weight: bold !important;
+        border: 0 !important;
     }
     #admin_notice_do_not_adblock h4 {
         background-color: #face50 !important;
@@ -317,8 +321,8 @@
     a[href^="/msg/pms/"] {
         color: #0ba1ed !important;    
     }
-    a[href^="/msg/troubl"] {
-        color: #f00 !important;
+    a[href^="/msg/troubl"], a[href^="/controls/troubl"] {
+        color: #f33 !important;
     }
     
         /* Also, let's give journals and images some distinctive highlights... */
