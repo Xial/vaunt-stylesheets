@@ -13,10 +13,10 @@
     Cheers!
 */
 /* 
-    Version String: v14.11.19.01-FX-VTDK
-    Version Name: "S3-Stiletto"
+    Version String: v15.03.05.02-FX-VTDK
+    Version Name: "AE-GreatShark"
     Mini-changelog:
-       finally, the admin box and the occasional news update are properly positioned!
+       Some of the new UI elements have been styled! :D
 */
 
 /* Header Scrolling Lock, mitigation of waste at the top. 
@@ -156,12 +156,12 @@
     .container-comment > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2){
         border: 0 !important;
     }
-   	.container-comment > tbody:nth-child(1) > tr:nth-child(2), .container-comment > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2) {
+   	.container-comment > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2) {
         border-right: 1px solid #face50 !important;    	
    	}
-	.container-comment > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
+    .container-comment > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
 	   border-left: 1px solid #face50 !important;
-	}
+    }
     
     .reply-link a {
         background-color: #face50 !important;
@@ -212,8 +212,11 @@
         text-align: left !important;
     }
     
-    .message-stream li:hover, li.checked {
-        background-color: #1e1d19 !important;
+    .message-stream li:hover {
+        background-color: #1e1c17 !important;
+    }
+    div#messagecenter-other ul.message-stream li.checked {
+        background-color: #2e2c27 !important;
     }
     
     hr {
@@ -326,6 +329,10 @@
     }
     
         /* Also, let's give journals and images some distinctive highlights... */
+    .edit-link {
+        background-color: #64ae64 !important;
+        border-top: 1px solid #64ae64 !important;
+    }
     a[href*="/journal/"] {
         color: #faca5e !important;
     }
@@ -433,6 +440,45 @@
             display: block;
         }
 
+    /* And this should make the edited comments a bit more visible! */
+    img[src$="/img/edited.png"] {
+        background-color: #feca10 !important;
+        box-shadow: -2px 0 0 2px rgba(254, 202, 16, 0.3) !important;
+    } 
+    
+    /* That new permalink view is nice and all... but goddamn, is it UGLY. Let's fade it out a bit, but make it easier to see if it's hovered. */
+    .comment-link {
+        color: #4d4d4d !important;
+        opacity: .3 !important;
+        transition: opacity .25s ease-in-out !important;
+    }
+    .comment-link:hover {
+        opacity: 1 !important;
+    }
+    
+    /* Let's see about styling deleted comments, too... */
+    .comment-deleted {
+        border-collapse: unset !important;
+        border-top: 1px solid #feca10 !important;
+        border-left: 1px solid #feca10 !important;
+    }
+    
+    tr.checked > td:nth-child(-n+3) {
+        background-color: #2d2d2d !important;
+    }
+    
+    /* So Streaming notifications get highlighted by default now, eh wot? Well, fuck that, I just fixed the colors. OBEY. */
+    
+    .stream-notification {
+        border-bottom: 1px solid #face50 !important;
+        background-color: #2d2d2d !important;
+    }
+    .stream-notification::before {
+        content: "🎥 " !important;
+        font-weight: bold;
+        color: #333 !important;
+        margin-left: -1.3em !important;
+    }
 
         /* Preview/Test: Let's get that ad to stop touching the scrollbar on the right side! :D */
         div.ads:nth-child(2) > div:nth-child(1) {
