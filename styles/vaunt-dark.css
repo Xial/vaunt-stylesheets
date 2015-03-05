@@ -13,7 +13,7 @@
     Cheers!
 */
 /* 
-    Version String: v15.03.05.02-FX-VTDK
+    Version String: v15.03.05.03-FX-VTDK
     Version Name: "AE-GreatShark"
     Mini-changelog:
        Some of the new UI elements have been styled! :D
@@ -473,8 +473,11 @@
         border-bottom: 1px solid #face50 !important;
         background-color: #2d2d2d !important;
     }
+
+	/* This puts a cute little film projector in front of the stream notifications for easy reading. With thanks to @grom on userstyles.org for reminding/educating me that I can't just paste unicode characters into a stylesheet and expect the magicks. :D */
+	
     .stream-notification::before {
-        content: "🎥 " !important;
+        content: "\1F3A5 \0020" !important;
         font-weight: bold;
         color: #333 !important;
         margin-left: -1.3em !important;
