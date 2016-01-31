@@ -6,21 +6,30 @@
     This is an attempt to make FurAffinity a little more usable.
     Currently, it is important to use the FurAffinity dark stylesheet in your Account settings to fix color mismatches.
     ponybells can only do so much with spaghetti. :)
-    If you like ponybells' work, feel free to buy them a half a gallon of gas.
+    If you like ponybells' work, feel free to buy them a cheeseburger.
     ponybells accepts dogecoin! - DRqTxQ28eEvNAiYryzypBcNJG9Ym4Up7R9
     ponybells accepts litecoin! - LU68fBHWwU4bbxNzUnowV6ooFRBYxiecnw
     ponybells accepts bitcoin!! - 133GutusMrnZrWToe4v88EJbyCjakQnt3N
     Cheers!
 */
 /* 
-    Version String: v15.03.05.03-FX-VTDK
-    Version Name: "AE-GreatShark"
+    Version String: v15.10.01.02-FX-VTDK
+    Version Name: "Patreaunt, a fine portmanteau of Vaunt and Patreon"
     Mini-changelog:
-       Some of the new UI elements have been styled! :D
+       Finally fixed the 'more' button when viewing your submissions queue. 
+       Retuned a few colors after realizing I was using the softer of the two yellows. 
+       Early prep fo a possible choose-your-own-color variant.
+       Many things moved from experimental to stable.
+    Mini-humorlog:
+       Cough Syrup. It's a hell of a drug. Let's begin!
+       
 */
 
-/* Header Scrolling Lock, mitigation of waste at the top. 
-    Ads shall remain - support your fuzzy, scaley, skinny, slimy, whatever-y cohorts. */
+    /* 
+    Header Scrolling Lock, mitigation of waste at the top. 
+    FA-Centric ads shall remain - support your fuzzy, scaley, skinny, slimy, whatever-y cohorts.
+    Newcomer Go-Ogle ads are hidden, however, now that the dating ads are here.
+    */
 
     .block-menu-top {
         position: fixed !important;
@@ -94,6 +103,19 @@
     ul.dropdown {
         padding-left: 2.6em !important;
     }
+    
+    /* This is for the new UCP return links when editing a submission! */
+    #usercp-submission-changeinfo .return-links {
+        border: 0 !important;
+        border-left: 1em solid #face50 !important;
+    }
+    
+    /* Hey! Admins now have a clearer marking when they speak on an image. You get to GLOW IN THE DARK! 
+       Also, rotated the colors 90°, because I forgot to. Whoops. */
+    .admin-comment th, .admin-comment h4, .admin-comment .reply-link a {
+        background: linear-gradient(to bottom, rgba(127,123,91,1) 0%,rgba(254,202,16,1) 75%);
+        color: #282828 !important;
+    }
 
     /* This wall of text styles the dropdown menu at the top, underneath the 'My FA' text. */
     .dropdown-left > li:nth-child(2) > ul:nth-child(2) > li, 
@@ -117,9 +139,13 @@
         border-top: 1px solid #face50 !important;
     }
     
-    body, table, tbody, .cat a, .innertable td, div, th, h6, h5, h4, h3, h2, h1 {
+    body, table, tbody, .cat, .cat a, .innertable td, td, div, th, h6, h5, h4 {
         background-color: #141414 !important;
         font: 10.5pt sans-serif !important;
+    }
+    #messagecenter-submissions > h1:nth-child(1) {
+        text-align: center !important;
+        color: #face50 !important;
     }
     
     .tab a {
@@ -138,29 +164,52 @@
         border-left: 0px !important;
     }
     
-    #submission > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
+    #submission > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1), #page-submission th.cat {
         border-left: 0 !important;
         border-right: 0 !important;
         border-bottom: 0 !important;
         border-top: 2px solid #face50 !important;
+        background-color: #111 !important;
+    } 
+    /* Oh hey, Mini gallery bars! Let's style them a bit. */
+    .minigallery-container {
+        border-bottom: 1px dotted #feca10 !important;
     }
+    .folder-list-container {
+        text-align: center !important;
+    }
+    a.dotted, a.dotted:hover {
+        border-bottom: 1px dotted #feca10 !important;
+    }
+    
+    /* That border around the image submission... No, thanks. Bad, and off-color. Removing. */
+    #submissionImg {
+        border: 0 !important;
+    }
+    
+    /* Restoring the vertical bar that splits text from metadata */
+    table.maintable:nth-child(8) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) {
+        padding: 0 !important;
+        border-right: 1px solid #feca10 !important;
+    }
+
+    /* All this to restyle the comments below to look more like Vaunt would. */
     .container-comment > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(-n+3) {
         border: 0 !important;
         border-bottom: 1px solid #feca10 !important;
     }
-    
-    /* All this to restyle the comments below to look more like Vaunt would. */
     .container-comment, .container-comment > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(1) {
         border: 0 !important;
     }
     .container-comment > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2){
         border: 0 !important;
     }
-   	.container-comment > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2) {
-        border-right: 1px solid #face50 !important;    	
+   	.container-comment > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2), th.lead:nth-child(2) {
+        border-right: 1px solid #feca10 !important;    	
    	}
+    /* removing one of the borders to smooth out some of the edges. Otherwise, too edgy. */
     .container-comment > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
-	   border-left: 1px solid #face50 !important;
+	   border-left: 0px solid #face50 !important;
     }
     
     .reply-link a {
@@ -200,6 +249,7 @@
     
     td.alt1, #keywords {
         font: 11pt 'Calibri', sans-serif !important;
+        background-color: #141414 !important;
     }
     
     .menu ul li ul li {
@@ -219,8 +269,9 @@
         background-color: #2e2c27 !important;
     }
     
+    /* Horizontal rules were color-shifted, but are re-aligned with the face50 range. */
     hr {
-        color: #d8ac94 !important;
+        color: #face50 !important;
     }
     h3.date-divider {
         border-bottom: 1px solid #face50 !important;
@@ -248,9 +299,12 @@
     #messages-journals {
         border-bottom: 1px solid #face50 !important;
     }
-    .more, .oldest, .newest, button {
-        background-color: #111 !important;
-        border-left: 1px dotted #face50 !important;
+
+    /* Let's styling buttons! */
+    .more, .oldest, .newest, button, .button, .button-link {
+        background-color: #1a1a1a !important;
+        border-left: 1px dotted #feca10 !important;
+        border-top: 1px dotted #feca10 !important;
         border-bottom: 0 !important;
         border-right: 0 !important;
         color: #face50 !important;
@@ -275,12 +329,12 @@
         width: 100% !important;
     }
     tbody tr td.cat div a {
-        border-left: 1px solid #face50 !important;
+        border-left: 1px dotted #face50 !important;
         border-bottom: 0 !important;
-        border-top: 1px solid #fff !important;
+        border-top: 1px dotted #face50 !important;
         border-right: 0 !important;
         font-family: monospace !important;
-        color: #face50 !important;
+        color: #feca10 !important;
     }
     
     #reply-op-preview {
@@ -304,13 +358,24 @@
         text-indent: 1em !important;
         font-style: oblique !important;
     }
-        /* Older, Newer buttons below images */
+        /* Older, Newer buttons below images no longer exist.
     .next, .prev {
         background-color: #282828 !important;
         border: 1px solid #fa6607 !important;
         color: #eee !important;
         padding-left: 1em !important;
         padding-right: 1em !important;
+    }  */
+    
+    /* However, this fixes that weird as hell More button. Should look into replacing text... */
+    .more {
+        width: 8.6em !important;
+        float: right !important;
+    }
+    /* Date divider gets a little treatment */
+    .date-divider {
+        font-size: 1.25em !important;
+        color: #feca10 !important;
     }
     
         /* I can at least color the message center links a little! */
@@ -389,20 +454,66 @@
         display: none !important;
     }
     
-        /* Occasionally, users do not want to be on FurAffinity, and have disabled access to their userpage. This attempts to highlight the unwatch link in glaring red. */
-    a[href^="/unwatch/"] {
-        color: #ff3939 !important;
-        text-shadow: 0 0 5px #933 !important;
+    /* New gallery view! ... but wrong colors. */
+    div.window {
+        border: 0 !important;
+        margin-top: 1px !important;
+        border-top: 4px double #face50 !important;
     }
     
-        /* There's a Password Confirmation that's hidden in /controls/settings/ that is styled with hard-coded values. This should clobber that. */
-    table.maintable:nth-child(21) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
-        color: #face50 !important;
+    #page-galleryscraps .folder-list {
+        border-right: 3px solid #face50 !important;
     }
-       /* 
+    
+    #page-galleryscraps .submission-list hr {
+        border-color: #face50 !important;
+    }
+    
+    #page-galleryscraps .folder-description h4 {
+        font-size: 150% !important;
+    }
+    
+    /* Occasionally, users do not want to be on FurAffinity, and have disabled access to their userpage. This attempts to highlight the unwatch link in glaring red. */
+    a[href^="/unwatch/"] {
+        color: #ff3939 !important;
+        text-shadow: 0 0 7px #933 !important;
+    }
+    /* And now, the inverse is true. The watch link is a gently glowing green. */
+    a[href^="/watch/"] {
+        color: #39ff39 !important;
+        text-shadow: 0 0 7px #933 !important;
+    }
+    
+    /* Since the sidebar left, they've been trying to slip more google ads in. 
+    No. I'm perfectly okay with ads that support my fandom. I am NOT okay, however, 
+    with ads for dating sites and the latest crappy clone of some shite comicbook characters.
+    Your overlords are being read the riot act:
+       I already called you out once during the post-takeover announcement, and you promised non-intrusive, relevant ads.
+       Flashing banner ads and shit for dating sites is outside of your realm of promise. You have failed.
+       I have delivered CSS-scented justice.
+       Smell the cascades, bitch.
+    */
+    div[id^="ad-extra"], div[id^="google"] {
+        display: none !important;
+    }
+    
+    /* There's a Password Confirmation that's hidden in /controls/settings/ that is styled with hard-coded values. 
+    This should clobber that. Again. Now that it's moved up two elements. Fucking shitdick.
+    Oh, and width fixed to align with everything else. */
+    table.maintable:nth-child(19) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
+        color: #face50 !important;
+        width: 45% !important;
+    }
+    table.maintable:nth-child(19) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) {
+        background: linear-gradient(to right,#daae30, transparent, transparent) !important;
+        color: #000 !important;
+        border-left: 1px solid #face50 !important;
+    }
+
+    /* 
           Hey, those new ratings checkmarks are handy and all, but inline styling sucks.
           The IDs should have also gone onto the small element. More path bashing!
-       */
+    */
     table.maintable:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > form:nth-child(1) > label:nth-child(13) > small:nth-child(2) {
         color: #AAA !important;
         font-family: monospace !important;
@@ -430,21 +541,6 @@
         border: 0 !important;
         box-shadow: 0 0 0 0 !important;            
     }
-    /* Experimental Modules Below, please disregard. While they have an impact on the overall view of the page, they should not provide an adverse reaction to what IS present. */
-
-        /* This should provide an underline to the content information section on a submission. */
-        table.maintable:nth-child(6) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > b:nth-child(26),
-        table.maintable:nth-child(6) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > b:nth-child(1), 
-        table.maintable:nth-child(6) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > b:nth-child(21) {
-            border-bottom: 1px solid #face50 !important;
-            display: block;
-        }
-
-    /* And this should make the edited comments a bit more visible! */
-    img[src$="/img/edited.png"] {
-        background-color: #feca10 !important;
-        box-shadow: -2px 0 0 2px rgba(254, 202, 16, 0.3) !important;
-    } 
     
     /* That new permalink view is nice and all... but goddamn, is it UGLY. Let's fade it out a bit, but make it easier to see if it's hovered. */
     .comment-link {
@@ -455,6 +551,22 @@
     .comment-link:hover {
         opacity: 1 !important;
     }
+    /* Then! We'll borrow that tech and apply it to a few other non-essential items, too! */
+    .footer > p:nth-child(3), .falogo {
+        color: #4d4d4d !important;
+        opacity: .3 !important;
+        transition: opacity .5s ease-in-out !important;
+    }
+
+    .footer > p:nth-child(3):hover, .falogo:hover {
+        opacity: 1 !important;
+    }
+
+    /* This should make the edited comments a bit more visible! */
+    img[src$="/img/edited.png"] {
+        background-color: #feca10 !important;
+        box-shadow: -2px 0 0 2px rgba(254, 202, 16, 0.3) !important;
+    } 
     
     /* Let's see about styling deleted comments, too... */
     .comment-deleted {
@@ -467,7 +579,7 @@
         background-color: #2d2d2d !important;
     }
     
-    /* So Streaming notifications get highlighted by default now, eh wot? Well, fuck that, I just fixed the colors. OBEY. */
+    /* So Streaming notifications get highlighted by default now, eh wot? Well, I fixed the colors. OBEY. */
     
     .stream-notification {
         border-bottom: 1px solid #face50 !important;
@@ -482,10 +594,25 @@
         color: #333 !important;
         margin-left: -1.3em !important;
     }
+    
+    /* The new notes view is neat and all, but obey my color rules! */
+    .note-list-container, .note-view-container {
+        border-top: 1px solid #2a2a2a !important;
+    }
+    .note-view-container {
+        border-left: 0 !important;
+    }
 
-        /* Preview/Test: Let's get that ad to stop touching the scrollbar on the right side! :D */
-        div.ads:nth-child(2) > div:nth-child(1) {
-        padding-right: 1.77em !important;
-        }
-
+    /* Preview/Test: Let's get that ad to stop touching the scrollbar on the right side! :D */
+    div.ads:nth-child(2) > div:nth-child(1) {
+       padding-right: 1.3em !important;
+    }
+    
+    /* Experimental Modules Below, please disregard. While they have an impact on the overall view of the page, they should not provide an adverse reaction to what IS present. */
+    
+    /* Another experiment -- I'd like to see about setting the journal/shout column to a maximum width of 400 pixels, to give more space to the submissions/favorites on the left. FA serves those dynamically based on display width. */
+    body > div:nth-child(2) > div:nth-child(5) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2) {
+        max-width: 512px !important;
+        width: 33% !important;
+    }
 }
