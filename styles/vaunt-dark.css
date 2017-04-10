@@ -6,23 +6,17 @@
     This is an attempt to make FurAffinity a little more usable.
     Currently, it is important to use the FurAffinity dark stylesheet in your Account settings to fix color mismatches.
     ponybells can only do so much with spaghetti. :)
-    If you like ponybells' work, feel free to buy them a cheeseburger.
-    ponybells accepts dogecoin! - DRqTxQ28eEvNAiYryzypBcNJG9Ym4Up7R9
-    ponybells accepts litecoin! - LU68fBHWwU4bbxNzUnowV6ooFRBYxiecnw
-    ponybells accepts bitcoin!! - 133GutusMrnZrWToe4v88EJbyCjakQnt3N
     Cheers!
 */
 /* 
-    Version String: v15.10.01.02-FX-VTDK
-    Version Name: "Patreaunt, a fine portmanteau of Vaunt and Patreon"
+    Version String: v17.04.01.01-FX-VTDK
+    Version Name: "Birthday is NOT a Joke"
     Mini-changelog:
-       Finally fixed the 'more' button when viewing your submissions queue. 
-       Retuned a few colors after realizing I was using the softer of the two yellows. 
-       Early prep fo a possible choose-your-own-color variant.
-       Many things moved from experimental to stable.
-    Mini-humorlog:
-       Cough Syrup. It's a hell of a drug. Let's begin!
-       
+       Added font size selectors for stories that actually work, because somehow I missed this. 
+       Made keywords stand out a bit more on each entry.
+       Fixed the undersized news blob that appears in the upper left corner. Font size brought into compliance. 
+    Mini-trivialog:
+       I'm out of work due to an arm injury.
 */
 
     /* 
@@ -187,10 +181,24 @@
         border: 0 !important;
     }
     
-    /* Restoring the vertical bar that splits text from metadata */
-    table.maintable:nth-child(8) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) {
+    /* Old Table Emulation, you say? */
+    .old-table-emulation {
+        border: 2px solid #feca10 !important;
+        border-left: 0px !important;
+        border-bottom: 0px !important;
+    }
+    .old-table-emulation > .head {
+        border: 0 !important;
+        border-bottom: 2px solid #feca10 !important;
         padding: 0 !important;
-        border-right: 1px solid #feca10 !important;
+        margin: 0 !important;
+    }
+    .old-table-emulation h4 {
+        background-color: #323232 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 130% !important;
+        text-align: center;
     }
 
     /* All this to restyle the comments below to look more like Vaunt would. */
@@ -358,19 +366,23 @@
         text-indent: 1em !important;
         font-style: oblique !important;
     }
-        /* Older, Newer buttons below images no longer exist.
+        /* Older, Newer buttons below images are back. Let's light 'em up! */
     .next, .prev {
         background-color: #282828 !important;
-        border: 1px solid #fa6607 !important;
+        border: 1px solid #fe9957 !important;
         color: #eee !important;
         padding-left: 1em !important;
         padding-right: 1em !important;
-    }  */
+    } 
     
-    /* However, this fixes that weird as hell More button. Should look into replacing text... */
-    .more {
+    /* This fixes that weird as hell More button. Should look into replacing text... */
+    .more-half, .more {
         width: 8.6em !important;
         float: right !important;
+        border: 0 !important;
+        border-left: 1px dotted #feca10 !important;
+        border-top: 1px dotted #feca10 !important;
+        background-color: #181818 !important;
     }
     /* Date divider gets a little treatment */
     .date-divider {
@@ -413,6 +425,12 @@
     a[href*="/view/"]:visited {
         color: #ca8a3e !important;
     }
+
+    /* This contains that padlock for links with https:// prefixes. Of course, because of how broken and blagged out the code for FA is, it won't indicate this everywhere -- just for user posted links. */
+    
+    a[href^="https://"]::before {
+        content: "\1F510 \0020" !important;
+    }
     
     td.cat {
         border-top: 1px solid #feca10 !important;
@@ -431,22 +449,45 @@
         cursor: wait !important;
     }
     
+    /* So there was a change that adjusted the information fields below an image. The problem is, the keywords were crammed into a tiny, tight space as an afterthought. Let's bring back the breathing room. */
+    table.maintable:nth-child(9) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
+        width: 80% !important;
+    }
+    table.maintable:nth-child(9) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) {
+        width: 20% !important;
+    }
+
+    /* Restoring the vertical bar that splits text from metadata */
+    table.maintable:nth-child(9) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) {
+        padding: 0 !important;
+        border-right: 1px solid #feca10 !important;
+    }
+    
     /* This handles the occasional bar of news that appears. 
        It's moved up to the banner's old space, since the banner's now on vacation in Threebaria. */
 
     #news {
-        border: 1px solid #feca50 !important;
+        border: 1px solid #4c3500 !important;
+        padding-left: 2.5em !important;
+        padding-right: 2.5em !important;
+        margin-top: -1em !important;
         height: 1.4em !important;
-        font-size: 100% !important;
+        font-size: 150% !important;
         position: absolute !important;
-        left: 2.2em !important;
+        left: 1.28em !important;
         top: 3.3em !important;
         background: transparent !important;
         background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QcZAwcPIP1UWwAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAFElEQVQI12NkYGCIZWBgYGBigAIABUwAYbNX7AgAAAAASUVORK5CYII=) !important;
+        transition: opacity .75s ease-in-out, border 0.75s ease-in-out !important;
+        opacity: 0.6 !important;
+    }
+    #news:hover {
+        opacity: 1 !important;
+        border: 1px solid #feca10 !important;
     }
     #news > img {
-        padding: 0 !important;
-        margin: -2.5px !important;
+        padding-left: 3em !important;
+        margin: 0 !important;
     }           
    
     /* Stuff I am hiding on purpose. */
@@ -478,33 +519,35 @@
         color: #ff3939 !important;
         text-shadow: 0 0 7px #933 !important;
     }
+    
     /* And now, the inverse is true. The watch link is a gently glowing green. */
     a[href^="/watch/"] {
         color: #39ff39 !important;
         text-shadow: 0 0 7px #933 !important;
     }
     
-    /* Since the sidebar left, they've been trying to slip more google ads in. 
-    No. I'm perfectly okay with ads that support my fandom. I am NOT okay, however, 
-    with ads for dating sites and the latest crappy clone of some shite comicbook characters.
-    Your overlords are being read the riot act:
-       I already called you out once during the post-takeover announcement, and you promised non-intrusive, relevant ads.
-       Flashing banner ads and shit for dating sites is outside of your realm of promise. You have failed.
-       I have delivered CSS-scented justice.
-       Smell the cascades, bitch.
+/* They had made it easier to block. But holy crap, why would this button be placed where it is without a hat switch attached? Let's light it up. */
+    
+    form[action^="/block/"] button {
+        color: #ff3939 !important;
+        box-shadow: 2px -2px 5px #933 !important;
+    }
+    
+    /* 
+    This section blocks the ads for various things other than furry artists. Eg: the Domino's Pizza ad for the Ukraine that I keep getting (WHY). Comment this out if you don't care about those ads.
     */
     div[id^="ad-extra"], div[id^="google"] {
         display: none !important;
     }
     
     /* There's a Password Confirmation that's hidden in /controls/settings/ that is styled with hard-coded values. 
-    This should clobber that. Again. Now that it's moved up two elements. Fucking shitdick.
+    This should clobber that. Again.
     Oh, and width fixed to align with everything else. */
-    table.maintable:nth-child(19) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
+    table.maintable:nth-child(23) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
         color: #face50 !important;
         width: 45% !important;
     }
-    table.maintable:nth-child(19) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) {
+    table.maintable:nth-child(23) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) {
         background: linear-gradient(to right,#daae30, transparent, transparent) !important;
         color: #000 !important;
         border-left: 1px solid #face50 !important;
@@ -515,18 +558,32 @@
           The IDs should have also gone onto the small element. More path bashing!
     */
     table.maintable:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > form:nth-child(1) > label:nth-child(13) > small:nth-child(2) {
-        color: #AAA !important;
+        color: #CCC !important;
         font-family: monospace !important;
     }
     table.maintable:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > form:nth-child(1) > label:nth-child(14) > small:nth-child(2) {
-        color: #AAE !important;
+        color: #88F !important;
         font-family: monospace !important;
     }
     table.maintable:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > form:nth-child(1) > label:nth-child(15) > small:nth-child(2) {
-        color: #EAA !important;
+        color: #F88 !important;
         font-family: monospace !important;
     }
-        /* Label: Clobber the 'deleted submissions' image and replace with our own. 
+    
+    /* I feel like coloring the keywords. */
+    
+    #keywords a {
+        color: #feca10 !important;
+        font-weight: bold !important;
+        opacity: 0.75 !important;
+        transition: opacity .5s ease-in-out, color .5s ease-in-out !important;
+    }
+    #keywords a:hover {
+        opacity: 1 !important;
+        color: #fff !important;
+    }
+    
+    /* Label: Clobber the 'deleted submissions' image and replace with our own. 
         Requires two phases: Original image must be hidden. Erased images have a consistent URL of '/view//'.
         Set a background-image on the anchor, not the image, and display none the image to get the image from
         the anchor to appear.*/
@@ -542,7 +599,7 @@
         box-shadow: 0 0 0 0 !important;            
     }
     
-    /* That new permalink view is nice and all... but goddamn, is it UGLY. Let's fade it out a bit, but make it easier to see if it's hovered. */
+    /* That new permalink view is nice and all... but damn, is it UGLY. Let's fade it out a bit, but make it easier to see if it's hovered. */
     .comment-link {
         color: #4d4d4d !important;
         opacity: .3 !important;
@@ -551,6 +608,7 @@
     .comment-link:hover {
         opacity: 1 !important;
     }
+
     /* Then! We'll borrow that tech and apply it to a few other non-essential items, too! */
     .footer > p:nth-child(3), .falogo {
         color: #4d4d4d !important;
@@ -565,7 +623,6 @@
     /* This should make the edited comments a bit more visible! */
     img[src$="/img/edited.png"] {
         background-color: #feca10 !important;
-        box-shadow: -2px 0 0 2px rgba(254, 202, 16, 0.3) !important;
     } 
     
     /* Let's see about styling deleted comments, too... */
@@ -592,7 +649,7 @@
         content: "\1F3A5 \0020" !important;
         font-weight: bold;
         color: #333 !important;
-        margin-left: -1.3em !important;
+        margin-left: -1.67em !important;
     }
     
     /* The new notes view is neat and all, but obey my color rules! */
@@ -608,11 +665,68 @@
        padding-right: 1.3em !important;
     }
     
+    /* Authors. From one author to another, I'm an idiot. They added a font size adjustment for stories and I somehow whiffed it. Complying. */
+    .font-size-1 {
+        font-size: 85% !important;
+        font-family: consolas, monospace !important;
+        border-top: 1px solid #cca800 !important;
+        background-color: #110f08 !important;
+        color: #fafade !important;
+        padding: 1.5em !important;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .font-size-2 {
+        font-size: 100% !important;
+        font-family: consolas, monospace !important;
+        border-top: 1px solid #cca800 !important;
+        background-color: #110f08 !important;
+        color: #fafade !important;
+        padding: 1.5em !important;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .font-size-3 {
+        font-size: 115% !important;
+        font-family: consolas, monospace !important;
+        border-top: 1px solid #cca800 !important;
+        background-color: #110f08 !important;
+        color: #fafade !important;
+        padding: 1.5em !important;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .font-size-4 {
+        font-size: 130% !important;
+        font-family: consolas, monospace !important;
+        border-top: 1px solid #cca800 !important;
+        background-color: #110f08 !important;
+        color: #fafade !important;
+        padding: 1.5em !important;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .font-size-5 {
+        font-size: 165% !important;
+        font-family: consolas, monospace !important;
+        border-top: 1px solid #cca800 !important;
+        background-color: #110f08 !important;
+        color: #fafade !important;
+        padding: 1.5em !important;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    
     /* Experimental Modules Below, please disregard. While they have an impact on the overall view of the page, they should not provide an adverse reaction to what IS present. */
     
     /* Another experiment -- I'd like to see about setting the journal/shout column to a maximum width of 400 pixels, to give more space to the submissions/favorites on the left. FA serves those dynamically based on display width. */
-    body > div:nth-child(2) > div:nth-child(5) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2) {
-        max-width: 512px !important;
+    body > div:nth-child(2) > div:nth-child(6) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2) {
+        max-width: 400px !important;
         width: 33% !important;
     }
+    
+    /* CloudFlare. You'll see them enough. */
+    div[id^="cf-"], div[class^="cf-"], div.cf-section::before {
+        background-color: #000 !important;
+    }   
 }
